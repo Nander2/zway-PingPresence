@@ -5,7 +5,8 @@
       "description" : "__m_descr__",
       "title" : "__m_title__",
       "device" : "",
-      "pingInterval" : 1
+      "pingInterval" : 1,
+      "pingTimeout" : 2
    },
    "dependencies" : [
       "Presence",
@@ -28,13 +29,19 @@
                         "label": "__l_dev__",
                         "datasource": "namespaces",
                         "field": "optionLabels",
-                        "optionLabels": "namespaces:devices_switchBinary:deviceName"
+                        "optionLabels": "namespaces:devices_switchBinary:deviceName",
+			"order" : 4
                  },
 		 "pingInterval" : {	
 			"label" : "__ping_interval__",
 			"order" : 2,
                         "type" : "integer"
-		 }
+		 },
+		 "pingTimeout" : {
+                        "label" : "__ping_timeout__",
+                        "order" : 3,
+                        "type" : "integer"
+                 }
       }
    },
    "repository" : {
@@ -55,6 +62,10 @@
             "required" : true
          },
          "pingInterval" : {
+            "type" : "integer",
+            "required" : true
+         },
+         "pingTimeout" : {
             "type" : "integer",
             "required" : true
          }

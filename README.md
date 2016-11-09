@@ -11,7 +11,8 @@ Lets you specify a ping polling intervals, host to ping, and virtual device to c
 # Installation
 
 The prefered way of installing this module is via the "Zwave.me App Store". For stable module releases no access token is required.
-You must add ping and grep command to authorized system commands (in ".syscommands" file).
+
+***** You must add ping and grep command to authorized system commands (in ".syscommands" file). *****
 
 # License
 

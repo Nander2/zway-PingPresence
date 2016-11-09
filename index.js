@@ -40,13 +40,11 @@ PingPresence.prototype.init = function (config) {
 	
     controller.on('pingPresence.poll',function() 
 	{
-		debugPrint(self.config['device']);
-                code = system('ping -c 1 -w 1' + self.config['ipToPing'] + ' | grep -c \'1 received\'');
+                code = system('ping -c 1 -w ' + self.config['pingTimeout'] + ' ' + self.config['ipToPing'] + ' | grep -c \'1 received\'');
 		if (code != null)
 		{
 			if(code[0] != null)
 			{
-				debugPrint('Code is ' + code[0]);
 				//rotate in the table
 				self.last3PingResult[2] = self.last3PingResult[1];
 				self.last3PingResult[1] = self.last3PingResult[0];
